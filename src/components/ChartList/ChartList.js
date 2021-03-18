@@ -7,7 +7,6 @@ import { fetchApi } from '../../data/api';
 function ChartsList({ selectedType }) {
     const [chartData, updateChartData] = useState([])
     console.log("chartData",chartData);
-    // console.log("updateChartData",updateChartData);
     useEffect(() => {
         fetchLaunchData()
     }, [selectedType])
@@ -16,9 +15,7 @@ function ChartsList({ selectedType }) {
         try {
           const request = await fetchApi()
           for (let i = 0; i < request.length; i++) {
-          // console.log("request", request[i].Number);
           updateChartData(request);
-        //   console.log("updateChartData",updateChartData);
         }
         } catch (error) {
           console.log(error);
